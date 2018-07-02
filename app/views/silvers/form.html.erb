@@ -1,0 +1,15 @@
+<form class="" action="/<%=@silver.id%>" method="post">
+  <label for="">ID</label>
+  <input type="text" name="id" value="<%=@silver.id%>">
+  <br>
+  <label for="">Title</label>
+  <input type="text" name="name" value="<%=@silver.title%>">
+  <br>
+  <label for="">Body</label>
+  <input type="text" name="id" value="<%=@silver.body%>">
+  <br>
+  <input href="/" type="submit" name="submit" value="submit">
+  <% if @silver.id != "" %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
