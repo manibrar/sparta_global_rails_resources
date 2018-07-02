@@ -1,2 +1,0 @@
-class Platinum < ApplicationRecord
-end

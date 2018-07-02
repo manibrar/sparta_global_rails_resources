@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_182411) do
+ActiveRecord::Schema.define(version: 2018_07_02_212509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "coppers", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "golds", force: :cascade do |t|
     t.string "title"
@@ -29,14 +22,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_182411) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "platinums", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "silvers", force: :cascade do |t|
+  create_table "metals", force: :cascade do |t|
     t.string "title"
     t.string "body"
     t.datetime "created_at", null: false

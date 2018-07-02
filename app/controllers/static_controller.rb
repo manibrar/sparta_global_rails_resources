@@ -1,10 +1,10 @@
-class GoldsController < ApplicationController
+class StaticController < ApplicationController
   before_action :set_gold, only: [:show, :edit, :update, :destroy]
 
   # GET /golds
   # GET /golds.json
   def index
-    @golds = Gold.all
+    @static_name = params[:name]
     respond_to do |format|
       format.html do
       end
@@ -14,7 +14,6 @@ class GoldsController < ApplicationController
   # GET /golds/1
   # GET /golds/1.json
   def show
-    puts "hello world"
   end
 
   # GET /golds/new

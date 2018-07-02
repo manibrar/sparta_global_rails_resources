@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="display-3">Metals</h1>
+
+<div>
+
+<div class="panel">
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @metals.each do |metal| %>
+      <tr>
+        <td ><%= metal.title %></td>
+        <td><%= metal.body %></td>
+        <td><%= link_to 'Show', metal %></td>
+        <td><%= link_to 'Edit', edit_metal_path(metal) %></td>
+        <td><%= link_to 'Destroy', metal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<button type="button" name="button"><%= link_to 'New Metal', new_metal_path %></button>
+<button type="button" name="button"><%= link_to 'Index', "/" %></button>
+
+</div>
+
+<br>
+
+<div class="panel">
+    <p>So far you have:</p>
+    <p>Visited the homepage = <%=cookies[:visited]%> times</p>
+    <p>Viewed the metals resources = <%=cookies[:show]%> times</p>
+    <p>Created <%=cookies[:new]%> new items</p>
+    <p>Edited <%=cookies[:edit]%> items</p>
+    <p>Deleted <%=cookies[:destroy]%> items</p>
+</div>

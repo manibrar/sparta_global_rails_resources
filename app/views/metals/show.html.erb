@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @metal.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @metal.body %>
+</p>
+
+<%= link_to 'Edit', edit_metal_path(@metal) %> |
+<%= link_to 'Back', metals_path %>
+<%= link_to 'Home', metals_path %>
