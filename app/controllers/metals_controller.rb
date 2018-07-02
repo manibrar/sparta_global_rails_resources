@@ -4,6 +4,7 @@ class MetalsController < ApplicationController
   # GET /metals
   # GET /metals.json
   def index
+    @name = params[:name]
     @metals = Metal.all
     if cookies[:visited]
       response.set_cookie(:visited,
@@ -41,19 +42,6 @@ class MetalsController < ApplicationController
   # GET /metals/new
   def new
     @metal = Metal.new
-    if cookies[:new]
-      response.set_cookie(:new,
-        :value => cookies[:new].to_i + 1
-      )
-    else
-      @show_message = true;
-      # set the visited cookie
-      response.set_cookie(:new,
-                          :value => 1,
-                          :expires => Time.now + (60 * 60 * 2)
-                         )
-
-    end
   end
 
   # GET /metals/1/edit
@@ -64,9 +52,21 @@ class MetalsController < ApplicationController
   # POST /metals.json
   def create
     @metal = Metal.new(metal_params)
-
     respond_to do |format|
       if @metal.save
+        if cookies[:new]
+          response.set_cookie(:new,
+            :value => cookies[:new].to_i + 1
+          )
+        else
+          @show_message = true;
+          # set the visited cookie
+          response.set_cookie(:new,
+                              :value => 1,
+                              :expires => Time.now + (60 * 60 * 2)
+                             )
+
+        end
         format.html { redirect_to @metal, notice: 'Metal was successfully created.' }
         format.json { render :show, status: :created, location: @metal }
       else
