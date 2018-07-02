@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @silver.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @silver.body %>
+</p>
+
+<%= link_to 'Edit', edit_silver_path(@silver) %> |
+<%= link_to 'Back', silvers_path %>

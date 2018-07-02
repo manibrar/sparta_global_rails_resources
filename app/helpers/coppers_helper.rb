@@ -1,0 +1,2 @@
+module CoppersHelper
+end

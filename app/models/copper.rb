@@ -1,0 +1,2 @@
+class Copper < ApplicationRecord
+end

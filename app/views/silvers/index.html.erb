@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Silvers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @silvers.each do |silver| %>
+      <tr>
+        <td><%= silver.title %></td>
+        <td><%= silver.body %></td>
+        <td><%= link_to 'Show', silver %></td>
+        <td><%= link_to 'Edit', edit_silver_path(silver) %></td>
+        <td><%= link_to 'Destroy', silver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Silver', new_silver_path %>

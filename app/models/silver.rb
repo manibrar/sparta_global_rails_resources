@@ -1,0 +1,2 @@
+class Silver < ApplicationRecord
+end

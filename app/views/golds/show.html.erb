@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gold.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @gold.body %>
+</p>
+
+<%= link_to 'Edit', edit_gold_path(@gold) %> |
+<%= link_to 'Back', golds_path %>
